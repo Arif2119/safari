@@ -1,11 +1,9 @@
-from datetime import date
 from django.contrib.auth.models import User
 from django.test import TestCase
 from rest_framework import status
 from rest_framework.authtoken.models import Token
 from rest_framework.test import APIClient
 from .models import Booking, Menu
-# Create your tests here.
 
 class BookingModelTest(TestCase):
     def setUp(self):
@@ -34,7 +32,6 @@ class MenuModelTest(TestCase):
         self.assertEqual(self.menu_item.title, 'Test Item')
         self.assertEqual(self.menu_item.price, 10.99)
         self.assertEqual(self.menu_item.inventory, 100) 
-
 class APITest(TestCase):
     def setUp(self):
         self.client = APIClient()
